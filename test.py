@@ -2,6 +2,7 @@
 import random
 import cSort
 import unittest
+from itertools import permutations as permu
 
 NO_ELEMENTS = 10000
 
@@ -60,6 +61,13 @@ class TestSortPython(unittest.TestCase):
         self.assertFalse(is_sorted(lst))
         self.sort_func(lst)
         self.assertTrue(is_sorted(lst))
+
+    def test_04(self):
+        '''Sort every permutation of range(8)'''
+        for lst in permu(range(8)):
+            test_list = list(lst)
+            self.sort_func(test_list)
+            self.assertTrue(is_sorted(test_list), "permutation: %r"%(lst,))
 
 
 class TestSortQuick(TestSortPython):
