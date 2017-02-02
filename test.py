@@ -3,7 +3,7 @@ import random
 import cSort
 import unittest
 
-NO_ELEMENTS = 1000
+NO_ELEMENTS = 10000
 
 def is_sorted(lst):
     for i in range(1, len(lst)):
